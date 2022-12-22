@@ -4,7 +4,7 @@
   --black: #2d314d;
   --grey: #9597a5;
 
-  -gredient: linear-gradient(135deg, #33d35e 0%, #2ab6d9 99.58%); 
+  --gradient: linear-gradient(135deg, #33d35e 0%, #2ab6d9 99.58%); 
 }
 
 
@@ -95,10 +95,122 @@ select:-webkit-autofill:focus {
 }
 
 
+/* Logo */
+.logo {
+  display: flex;
+}
+
+.logo:hover {
+  opacity: .8;
+}
+
+.logo:active {
+  opacity: .6;
+}
+
+.logo__img {
+  width: 139px;
+  height: 20px;
+  object-fit: contain;
+}
+
+
+/* Sitenav */
+.sitenav__list {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: normal;
+}
+
+.sitenav__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.sitenav__link {
+  display: block;
+  position: relative;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  text-decoration: none;
+  color: var(--grey);
+  transition: color .3s ease;
+}
+
+.sitenav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  background-image: var(--gradient);
+  transition: width .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sitenav__link:hover::after {
+  width: 100%;
+}
+
+.sitenav__link:hover {
+  color: var(--black);
+}
+
+
 /* MAIN-CONTENT */
 .main-content {
   flex-grow: 1;
 }
+
+
+/* Button */
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 8px 34px;
+  border: 0;
+  border-radius: 22px;
+  font-weight: 14;
+  line-height: 28px;
+  font-weight: 500; 
+  background-image: var(--gradient);
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity .3s ease;
+}
+
+.button:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 22px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.button:active {
+  transform: translateY(2px);
+}
+
+
+/* Sitenav */
+.site-header {
+  background-color: #fff;
+}
+
+.site-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
