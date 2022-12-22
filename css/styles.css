@@ -28,6 +28,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
   height: 100%;
   padding: 0;
   margin: 0;
@@ -202,6 +203,8 @@ select:-webkit-autofill:focus {
 
 /* Sitenav */
 .site-header {
+  position: relative;
+  z-index: 999;
   background-color: #fff;
 }
 
@@ -209,6 +212,49 @@ select:-webkit-autofill:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+
+/* Hero */
+.hero {
+  position: relative;
+  z-index: 30;
+  padding-top: 170px;
+  padding-bottom: 170px;
+  background-image: url("../img/hero-bg.svg");
+  background-repeat: no-repeat;
+  background-position: calc(50% + 593px) -261px;
+}
+
+.hero__content {
+  width: 100%;
+  max-width: 450px;
+}
+
+.hero__title {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 56px;
+  font-weight: 100;
+  line-height: 64px;
+  color: var(--black);
+  letter-spacing: -1px;
+}
+
+.hero__text {
+  margin-top: 0;
+  margin-bottom: 36px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.hero__img {
+  position: absolute;
+  width: 730px;
+  height: 900px;
+  object-fit: contain;
+  left: calc(50% + 74px);
+  top: -112px;
 }
 
 
